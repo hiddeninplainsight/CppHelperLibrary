@@ -1,0 +1,10 @@
+lcov_branch_coverage=1
+
+genhtml_hi_limit = 90
+genhtml_med_limit = 70
+genhtml_function_hi_limit = 90
+genhtml_function_med_limit = 70
+
+genhtml_num_spaces = 4
+
+genhtml_legend = 1
