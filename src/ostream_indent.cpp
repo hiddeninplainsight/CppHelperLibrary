@@ -2,17 +2,19 @@
 
 namespace chl
 {
-	ostream_indent::ostream_indent(std::streambuf *dest, ::std::string::size_type indent)
+	ostream_indent::ostream_indent(std::streambuf* destination,
+								   ::std::string::size_type indent)
 		: indent(indent, ' ')
-		, destination_streambuf{dest}
+		, destination_streambuf{destination}
 		, owning_ostream{nullptr}
 	{
 	}
 
-	ostream_indent::ostream_indent(std::ostream &dest, ::std::string::size_type indent)
+	ostream_indent::ostream_indent(std::ostream& destination,
+								   ::std::string::size_type indent)
 		: indent(indent, ' ')
-		, destination_streambuf(dest.rdbuf())
-		, owning_ostream{&dest}
+		, destination_streambuf(destination.rdbuf())
+		, owning_ostream{&destination}
 	{
 		owning_ostream->rdbuf(this);
 	}

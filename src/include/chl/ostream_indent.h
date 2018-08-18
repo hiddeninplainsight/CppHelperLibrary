@@ -1,9 +1,9 @@
 #ifndef CPPHELPERLIBRARY_OSTREAM_INDENT_H
 #define CPPHELPERLIBRARY_OSTREAM_INDENT_H
 
+#include <ostream>
 #include <streambuf>
 #include <string>
-#include <ostream>
 
 namespace chl
 {
@@ -15,8 +15,10 @@ namespace chl
 		::std::ostream* owning_ostream;
 
 	public:
-		explicit ostream_indent(::std::streambuf* dest, ::std::string::size_type indent = 4);
-		explicit ostream_indent(::std::ostream& dest, ::std::string::size_type indent = 4);
+		explicit ostream_indent(::std::streambuf* destination,
+								::std::string::size_type indent = 4);
+		explicit ostream_indent(::std::ostream& destination,
+								::std::string::size_type indent = 4);
 		~ostream_indent() override;
 
 	protected:
@@ -24,4 +26,4 @@ namespace chl
 	};
 }
 
-#endif // CPPHELPERLIBRARY_OSTREAM_INDENT_H
+#endif  // CPPHELPERLIBRARY_OSTREAM_INDENT_H
